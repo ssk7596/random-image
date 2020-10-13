@@ -35,7 +35,7 @@ public class ImageService {
     }
 
     public byte[] getRandomImage(){
-        return restTemplate.getForObject("https://picsum.photos/500",byte[].class);
+        return restTemplate.getForObject(String.format("https://picsum.photos/%s",(int)Math.random()*1000),byte[].class);
     }
 
     @Transactional
